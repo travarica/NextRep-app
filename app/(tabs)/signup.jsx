@@ -11,6 +11,7 @@ const [fontsLoaded] = useFonts({
   'REM': require('../../assets/fonts/REM.ttf'),
   'REM ExtraBold': require('../../assets/fonts/REM ExtraBold.ttf'),
   'REM (2)': require('../../assets/fonts/REM (2).ttf'),
+  'REM Medium': require('../../assets/fonts/REM Medium.ttf')
 });
 
 useEffect(() => {
@@ -36,7 +37,7 @@ if (!fontsLoaded) {
       <Text style={styles.signup}>Sign Up</Text>
       <View style={styles.alreadycontainer}>
         <Text style={styles.already}>Already have an account? </Text>
-        <Text style={styles.signin}>Sign In</Text>
+        <Text style={styles.signin} onPress={() => router.push('/signin')}>Sign In</Text>
       </View>
       <Text style={styles.email}>Your email address</Text>
       <TextInput style={styles.emailinput} placeholder='something@gmail.com' placeholderTextColor="#D6D6D6"></TextInput>
@@ -47,6 +48,23 @@ if (!fontsLoaded) {
         <Text style={styles.contiunetext}>Continue</Text>
         <Image source={require('../../assets/images/strelica.png')} style={styles.strelica} ></Image>
         </View>
+      </TouchableOpacity>
+      <View style={styles.orcontainer}>
+        <View style={styles.linija}></View>
+        <Text style={styles.ortext}>Or</Text>
+        <View style={styles.linija}></View>
+      </View>
+      <TouchableOpacity style={styles.googlebutton}>
+        <View style={styles.googlecontainer}>
+          <Image source={require('../../assets/images/google.png')} style={styles.googleslika}></Image>
+          <Text style={styles.googletext}>Sign up with Google</Text>
+        </View>  
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.applebutton}>
+        <View style={styles.applecontainer}>
+          <Image source={require('../../assets/images/apple (1).png')} style={styles.appleslika}></Image>
+          <Text style={styles.appletext}>Sign up with Apple</Text>
+        </View>  
       </TouchableOpacity>
      {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>
       </View>*/}
@@ -91,7 +109,7 @@ const styles = StyleSheet.create({
   alreadycontainer: {
     flexDirection: "row",
     marginTop: 10,
-    marginLeft: -55
+    marginLeft: -50
   },
   already:{
    fontFamily: "REM (2)",
@@ -163,5 +181,79 @@ const styles = StyleSheet.create({
    position: "relative",
    left: 85,
    tintColor: "#FFFDFF"
-  }
+  },
+  orcontainer:{
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center", 
+  marginTop: 25
+  },
+  linija:{
+    height: 1,
+    width: 125,
+    backgroundColor: "#D6D6D6",
+    borderRadius: 5,
+    marginHorizontal: 10
+
+  },
+  ortext:{
+    fontFamily: "REM Medium",
+    fontSize: 15,
+  },
+  googlecontainer:{
+   flexDirection: "row",
+   justifyContent: "center",
+   alignItems: "center",
+  },
+  googlebutton:{
+    backgroundColor: "#E9E7E7",
+    height: 50,
+    width: 290,
+    borderRadius: 30,
+    justifyContent: "center",
+    marginTop: 25
+  },
+  googleslika:{
+    width: 20,
+    height: 20,
+    tintColor: "#272D34",
+    position: "relative",
+    right: 18
+  },
+  googletext:{
+    fontFamily: "REM",
+    fontSize: 17,
+    color:"#272D34",
+    textAlign: "center",
+    marginBottom: 2,
+    letterSpacing: 1
+  },
+  applecontainer:{
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+   },
+   applebutton:{
+     backgroundColor: "#E9E7E7",
+     height: 50,
+     width: 290,
+     borderRadius: 30,
+     justifyContent: "center",
+     marginTop: 15
+   },
+   appleslika:{
+     width: 25,
+     height: 25,
+     tintColor: "#272D34",
+     position: "relative",
+     right: 21
+   },
+   appletext:{
+     fontFamily: "REM",
+     fontSize: 17,
+     color:"#272D34",
+     textAlign: "center",
+     marginBottom: 2,
+     letterSpacing: 1
+   },
 })
