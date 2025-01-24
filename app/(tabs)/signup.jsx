@@ -45,7 +45,7 @@ if (!fontsLoaded) {
       <TextInput style={styles.passwordinput} placeholder='min. 8 characters' placeholderTextColor="#D6D6D6" secureTextEntry={true}></TextInput>
       <TouchableOpacity style={styles.continuebutton}>
         <View style={styles.continuecontainer}>
-        <Text style={styles.contiunetext}>Continue</Text>
+        <Text style={styles.contiunetext} onPress={()=> router.push('/main')}>Continue</Text>
         <Image source={require('../../assets/images/strelica.png')} style={styles.strelica} ></Image>
         </View>
       </TouchableOpacity>
@@ -69,6 +69,7 @@ if (!fontsLoaded) {
      {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>
       </View>*/}
       
+    
     </View>
   )
 }
@@ -256,4 +257,5 @@ const styles = StyleSheet.create({
      marginBottom: 2,
      letterSpacing: 1
    },
+   
 })
